@@ -1,0 +1,22 @@
+{
+   "name": "k-d-tree",
+   "version": "0.0.1",
+   "description": "JavaScript k-d Tree Implementation",
+   "main": "./kdTree.js",
+   "keywords": [
+      "tree",
+      "k-d"
+   ],
+   "author": " Ubilabs",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/csbrandt/k-d-tree/issues"
+   },
+   "homepage": "https://github.com/csbrandt/k-d-tree",
+   "devDependencies": {
+
+   },
+   "dependencies": {
+
+   }
+}
