@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * k-d Tree JavaScript
  */
@@ -25,7 +26,7 @@ function kdTree(points, metric) {
       }
 
       points.sort(function(a, b) {
-         return a.coordinates[dim] - b.coordinates[dim];
+         return a[dim] - b[dim];
       });
 
       median = Math.floor(points.length / 2);
@@ -77,7 +78,7 @@ function kdTree(points, metric) {
             return parent;
          }
 
-         if (point.coordinates[0] < node.obj.coordinates[0]) {
+         if (point[0] < node.obj[0]) {
             return innerSearch(node.left, node);
          } else {
             return innerSearch(node.right, node);
@@ -94,7 +95,7 @@ function kdTree(points, metric) {
 
       newNode = new Node(point, insertPosition);
 
-      if (point.coordinates[0] < insertPosition.obj.coordinates[0]) {
+      if (point[0] < insertPosition.obj[0]) {
          insertPosition.left = newNode;
       } else {
          insertPosition.right = newNode;
@@ -113,7 +114,7 @@ function kdTree(points, metric) {
             return node;
          }
 
-         if (point.coordinates[0] < node.obj.coordinates[0]) {
+         if (point[0] < node.obj[0]) {
             return nodeSearch(node.left, node);
          } else {
             return nodeSearch(node.right, node);
@@ -165,7 +166,7 @@ function kdTree(points, metric) {
                return;
             }
 
-            if (node.obj.coordinates[0] < node.parent.obj.coordinates[0]) {
+            if (node.obj[0] < node.parent.obj[0]) {
                node.parent.left = null;
             } else {
                node.parent.right = null;
@@ -240,7 +241,7 @@ function kdTree(points, metric) {
          } else if (node.left === null) {
             bestChild = node.right;
          } else {
-            if (point.coordinates[0] < node.obj.coordinates[0]) {
+            if (point[0] < node.obj[0]) {
                bestChild = node.left;
             } else {
                bestChild = node.right;
@@ -430,4 +431,4 @@ BinaryHeap.prototype = {
    }
 };
 
-module.exports = kdTree;
+export default kdTree;
